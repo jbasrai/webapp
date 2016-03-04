@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "mose webapp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbasrai/webapp.git"
+  },
+  "author": "Jauhar Basrai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbasrai/webapp/issues"
+  },
+  "homepage": "https://github.com/jbasrai/webapp#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "webpack": "^1.12.14"
+  }
+}
