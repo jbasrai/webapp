@@ -1,7 +1,15 @@
-const router = require('express').Router();
+import express from 'express'
+import React from 'react'
+import ReactDOM from 'react-dom/server'
+import App from './src/App'
+
+const router = express.Router();
+const AppFactory = React.createFactory(App);
 
 router.get('/results', function(req, res) {
-    res.render('results', { reactHtml: 'world' });
+    const $App = AppFactory({});
+    const reactHtml = ReactDOM.renderToString($App);
+    res.render('results', { reactHtml: reactHtml });
 });
 
-module.exports = router;
+export default router;

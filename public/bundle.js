@@ -54,27 +54,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(158);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Test = _react2.default.createClass({
-	    displayName: 'Test',
+	exports.default = _react2.default.createClass({
+	    displayName: 'main',
 
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'div',
 	            null,
-	            'hello world'
+	            'a s d f'
 	        );
 	    }
-	});
-
-	_reactDom2.default.render(_react2.default.createElement(Test, null), document.getElementById('react-mount'));
-
-	exports.default = Test;
+	}); // root React element
 
 /***/ },
 /* 1 */
@@ -19667,15 +19659,6 @@
 
 	module.exports = deprecated;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 158 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	module.exports = __webpack_require__(3);
-
 
 /***/ }
 /******/ ]);

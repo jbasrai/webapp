@@ -1,12 +1,9 @@
 // dependencies
-var express = require('express');
-var app = express();
-var router = require('./router');
+require('babel-register');
+const express = require('express');
+const app = express();
+const router = require('./router').default;
 
-const webpack = require('webpack');
-const config = require('./webpack.config.js');
-webpack(config);
-    
 // setup
 app.set('port', process.env.PORT || 3000);
 app.set('views', 'views');
