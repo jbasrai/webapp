@@ -6,6 +6,7 @@
 - configure babel for node √ 2016-03-06
 - add webpack dev server √ 2016-03-06
 - add inline mode to webpack √ 2016-03-06
+- add sass loader
 
 ### backlog
 - add hot module reloading 

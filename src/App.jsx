@@ -1,5 +1,6 @@
-import Main from './components/Main.jsx'
+import ResultsPage from './components/resultsPage/ResultsPage.jsx'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './styles/resultsPage/resultsPage'
 
-ReactDOM.render(<Main/>, document.getElementById('react-mount'));
+ReactDOM.render(<ResultsPage />, document.getElementById('react-mount'));
