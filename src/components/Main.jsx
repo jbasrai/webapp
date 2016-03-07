@@ -4,6 +4,6 @@ import React from 'react'
 
 export default React.createClass({
     render: function() {
-        return <div>a s d f</div>;
+        return <div>ok lets go</div>;
     }
 });
