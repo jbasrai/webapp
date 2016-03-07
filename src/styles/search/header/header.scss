@@ -1,0 +1,14 @@
+@import './logo/logo';
+@import './searchBar/searchBar';
+
+.header {
+  background-color: #F3E2A9;
+  height: 50px;
+
+  padding: 30px;
+
+  .logo-search-bar-spacer {
+    display: inline-block;
+    width: 50px;
+  }
+}

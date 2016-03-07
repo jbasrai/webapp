@@ -1,0 +1,18 @@
+.search-bar {
+    display: inline-block;
+    height: 50px;
+
+    .search-field {
+        height: 50px;
+        width: 500px;
+    }
+
+    .search-field-search-submit-spacer {
+        display: inline-block;
+        width: 20px;
+    }
+
+    .search-submit {
+        height: 50px;
+    }
+}

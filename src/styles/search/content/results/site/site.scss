@@ -1,0 +1,12 @@
+@import './siteResult/siteResult';
+
+.site {
+    .site-name {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}

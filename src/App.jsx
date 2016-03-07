@@ -1,6 +1,6 @@
-import ResultsPage from './components/resultsPage/ResultsPage.jsx'
+import Search from './components/search/Search'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/resultsPage/resultsPage'
+import './styles/search/search'
 
-ReactDOM.render(<ResultsPage />, document.getElementById('react-mount'));
+ReactDOM.render(<Search />, document.getElementById('react-mount'));
