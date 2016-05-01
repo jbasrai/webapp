@@ -1,11 +1,12 @@
+@import '../../common';
 @import './logo/logo';
 @import './searchBar/searchBar';
 
 .header {
-  background-color: #F3E2A9;
+  background-color: $background-color;
   height: 50px;
-
   padding: 30px;
+  border-bottom: 1px solid $primary-color;
 
   .logo-search-bar-spacer {
     display: inline-block;

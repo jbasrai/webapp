@@ -1,7 +1,8 @@
+@import '../../common';
 @import './results/results';
 
 .content {
-  background-color: #D8CEF6;
-  margin-left: 150px;
+  background-color: $background-color;
+  margin-left: $sideBar-width + $sideBar-padding-left;
   height: 100%;
 }

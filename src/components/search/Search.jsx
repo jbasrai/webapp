@@ -9,7 +9,7 @@ export default React.createClass({
             <div className="results-page">
                 <Header />
                 <SideBar />
-                <Content />
+                <Content query={ this.props.query }/>
             </div>
         );
     }

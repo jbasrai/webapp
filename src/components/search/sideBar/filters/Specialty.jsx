@@ -1,11 +1,10 @@
 import React from 'react'
-import Results from './results/Results'
 
 export default React.createClass({
     render: function() {
         return (
-            <div className="content">
-                <Results query={ this.props.query }/>
+            <div className="specialty filter">
+                <div className="filter-type">Specialty</div>
             </div>
         );
     }

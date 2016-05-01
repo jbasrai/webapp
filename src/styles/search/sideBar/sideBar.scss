@@ -1,6 +1,11 @@
-.sideBar {
-  background-color: #CEF6E3;
+@import '../../common.scss';
+@import './filters/filters';
+
+.side-bar {
+  background-color: $secondary-color;
   float: left;
-  width: 150px;
+  width: $sideBar-width;
   height: 100%;
+  border-right: 1px solid $primary-color;
+  padding: $sideBar-padding-top 0px 0px $sideBar-padding-left ;
 }

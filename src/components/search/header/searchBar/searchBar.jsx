@@ -5,8 +5,7 @@ export default React.createClass({
         return (
             <div className="search-bar">
                 <input className="search-field" />
-                <div className="search-field-search-submit-spacer" />
-                <button className="search-submit">Go</button>
+                <button className="search-submit">Search</button>
             </div>
         );
     }

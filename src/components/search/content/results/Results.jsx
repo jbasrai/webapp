@@ -7,6 +7,7 @@ export default React.createClass({
         return this.state.results.map((result) => {
             const name = result[0];
             const siteResults = result[1];
+            console.log(name);
 
             return (
                 <Site 
@@ -21,7 +22,7 @@ export default React.createClass({
         return { results: [] };
     },
     componentDidMount: function() {
-        $.get('/query', function(results) {
+        $.get('/query', { q: this.props.query }, function(results) {
             this.setState({ results });
         }.bind(this));
     },

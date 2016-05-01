@@ -2,8 +2,11 @@
 
 .site {
     .site-name {
-        font-size: 32px;
+        font-size: 26px;
         font-weight: bold;
+        padding-bottom: 3px;
+        border-bottom: 1px solid #E2E0D8;
+        margin-bottom: 10px;
     }
 
     &:not(:last-child) {
