@@ -1,5 +1,5 @@
-import React from 'react'
-import SiteResult from './siteResult/SiteResult'
+import React from 'react';
+import SiteResult from './SiteResult';
 
 export default React.createClass({
     renderSiteResults: function() {

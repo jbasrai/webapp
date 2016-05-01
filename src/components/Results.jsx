@@ -1,6 +1,6 @@
-import React from 'react'
-import $ from 'jquery'
-import Site from './site/Site'
+import React from 'react';
+import $ from 'jquery';
+import Site from './Site';
 
 export default React.createClass({
     renderSites: function() {

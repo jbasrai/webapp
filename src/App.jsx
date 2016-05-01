@@ -1,7 +1,7 @@
-import Search from './components/search/Search'
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './styles/search/search'
+import Search from './components/Search';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles/search';
 
 const getParameterByName = (name, url) => {
     if (!url) url = window.location.href;

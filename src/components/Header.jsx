@@ -1,6 +1,6 @@
-import React from 'react'
-import Logo from './logo/Logo'
-import SearchBar from './searchBar/SearchBar'
+import React from 'react';
+import Logo from './Logo';
+import SearchBar from './SearchBar';
 
 export default React.createClass({
     render: function() {

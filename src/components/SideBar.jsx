@@ -1,6 +1,6 @@
-import React from 'react'
-import ArticleType from './filters/ArticleType'
-import Specialty from './filters/Specialty'
+import React from 'react';
+import ArticleType from './ArticleType';
+import Specialty from './Specialty';
 
 export default React.createClass({
     render: function() {

@@ -1,7 +1,7 @@
-import React from 'react'
-import Header from './header/Header'
-import SideBar from './sideBar/SideBar'
-import Content from './content/Content'
+import React from 'react';
+import Header from './Header';
+import SideBar from './SideBar';
+import Content from './Content';
 
 export default React.createClass({
     render: function() {
