@@ -35,7 +35,8 @@ if (process.env.NODE_ENV === 'development') {
     const compiler = webpack(config);
 
     new devServer(compiler, {
-        publicPath: '/build'
+        publicPath: '/build',
+        stats: { chunks: false }
     }).listen(devPort, function() {
         console.log('dev server started on port ' + devPort);
     });

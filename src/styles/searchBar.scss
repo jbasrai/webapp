@@ -4,11 +4,13 @@
     display: inline-block;
     height: 50px;
     vertical-align: top;
+    position: relative;
+    right: -72px; // calculated manually
 
     .search-field {
         height: 48px;
         width: 500px;
-        padding: 0px;
+        padding: 0 0 0 10px;
         border: 1px solid #4A86E8;
     }
 
@@ -18,5 +20,6 @@
         background-color: $primary-color;
         border: 0px;
         font-weight: bold;
+        color: #111;
     }
 }
