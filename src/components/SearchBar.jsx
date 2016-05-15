@@ -1,12 +1,14 @@
 import React from 'react';
 
-export default React.createClass({
-    render: function() {
-        return (
-            <div className="search-bar">
-                <input className="search-field" />
-                <button className="search-submit">Search</button>
-            </div>
-        );
-    }
-});
+export default ({ onChange, onSubmit }) => (
+    <div className="search-bar">
+        <form onSubmit={ onSubmit }>
+            <input 
+                className="search-field"
+                onChange={ onChange } />
+            <input
+                type="submit"
+                className="search-submit" />
+        </form>
+    </div>
+);
