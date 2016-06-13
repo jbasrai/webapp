@@ -7,12 +7,12 @@ body {
   padding: 0;
 }
 
-html, body, #react-mount, .results-page {
-  height: 100%;
-  width: 100%;
-}
 
 * {
     font-family: 'Helvetica', 'sans-serif';
     font-size: 16px;
+}
+
+.selected {
+    color: #4F81BD
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from './Logo';
-import SearchBarContainer from '../containers/SearchBarContainer';
+import React from 'react'
+import Logo from './Logo'
+import SearchBarContainer from '../containers/SearchBarContainer'
 
 export default () => (
     <div className="header">
@@ -8,4 +8,4 @@ export default () => (
         <div className="logo-search-bar-spacer" />
         <SearchBarContainer />
     </div>
-);
+)

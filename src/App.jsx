@@ -1,9 +1,8 @@
-import Search from './components/Search';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles/search';
+import 'babel-polyfill'
 
-const results = window.results;
+import Root from './Root'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<Search results={ results }/>, 
-    document.getElementById('react-mount'));
+ReactDOM.render(<Root />, 
+    document.getElementById('root'))

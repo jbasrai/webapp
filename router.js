@@ -17,14 +17,9 @@ router.get('/search', function(req, res) {
 
 router.get('/query', function(req, res) {
     var query = req.query;
-
-    console.log('query');
     queryService
         .search(query)
-        .then(function({ data }) {
-            console.log('results are returned');
-            res.json(data);
-        });
+        .then(({ data }) => res.json(data));
 });
 
 export default router;

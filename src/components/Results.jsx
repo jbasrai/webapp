@@ -1,6 +1,6 @@
-import React from 'react';
-import $ from 'jquery';
-import Site from './Site';
+import React from 'react'
+import $ from 'jquery'
+import Site from './Site'
 
 export default ({ results }) => (
     <div className="results">
@@ -12,4 +12,4 @@ export default ({ results }) => (
             />
         )) }
     </div>
-);
+)

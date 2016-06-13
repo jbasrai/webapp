@@ -1,8 +1,8 @@
-import React from 'react';
-import Results from './Results';
+import React from 'react'
+import ResultsContainer from '../containers/ResultsContainer'
 
-export default ({ results }) => (
+export default () => (
     <div className="content">
-        <Results results={ results }/>
+        <ResultsContainer />
     </div>
-);
+)

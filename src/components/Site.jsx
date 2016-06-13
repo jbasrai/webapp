@@ -1,5 +1,5 @@
-import React from 'react';
-import SiteResult from './SiteResult';
+import React from 'react'
+import SiteResult from './SiteResult'
 
 export default ({ name, siteResults }) => (
     <div className="site">
@@ -13,4 +13,4 @@ export default ({ name, siteResults }) => (
             />
         )) }
     </div>
-);
+)
