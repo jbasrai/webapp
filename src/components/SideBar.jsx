@@ -1,7 +1,25 @@
 import React from 'react'
-import List from '../reusable/List'
 import { getURLParameter } from '../utils'
 import { articleTypes, specialties } from '../values'
+
+const Option = ({ name, value, isSelected }) => (
+    <li className={ isSelected ? 'selected' : '' }>
+        { name }
+    </li>
+)
+
+const Filter = ({ title, options, selected }) => (
+    <div className="filter">
+        <h3 className="filter-name">{ title }</h3>
+        <ul className="filter-list">{ options.map(({ name, value }) =>
+            <Option
+                key={ value }
+                name={ name }
+                value={ value } 
+                isSelected={ selected === value } /> )}
+        </ul>
+    </div>
+)
 
 export default () => {
     const selectedArticleType =
@@ -12,38 +30,18 @@ export default () => {
         getURLParameter('specialty') ||
         'internalMedicine'
 
-    const renderFilters = (title, filters, selected) => {
-        const renderedFilters = 
-            filters.map(({ name, value }) => {
-                const className = selected === value ?
-                    'selected' : ''
-
-                return (
-                    <span 
-                        key={ value }
-                        className={ className }>
-                        { name }
-                    </span>
-                )
-            })
-
-        return (
-            <List title={ title }>
-                { renderedFilters }
-            </List>
-        )
-    }
-
-    const ArticleTypes = renderFilters(
-        'Article Types',
-        articleTypes,
-        selectedArticleType
+    const ArticleTypes = (
+        <Filter
+            title="Article Types"
+            options={ articleTypes }
+            selected={ selectedArticleType } />
     )
 
-    const Specialties = renderFilters(
-        'Specialties',
-        specialties,
-        selectedSpecialty
+    const Specialties = (
+        <Filter
+            title="Specialties"
+            options={ specialties }
+            selected={ selectedSpecialty } />
     )
 
     return (

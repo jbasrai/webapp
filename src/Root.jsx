@@ -3,13 +3,13 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import React from 'react'
 
-import Search from './components/Search'
-import './styles/search'
+import SearchPage from './containers/SearchPage'
+import './styles/index.scss'
 
 const store = createStore(reducer, { results: window.results })
 
 export default () => ( 
     <Provider store={ store }>
-        <Search /> 
+        <SearchPage /> 
     </Provider>
 )

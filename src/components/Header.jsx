@@ -1,11 +1,14 @@
 import React from 'react'
-import Logo from './Logo'
-import SearchBarContainer from '../containers/SearchBarContainer'
-
-export default () => (
+export default ({ searchTerm }) => (
     <div className="header">
-        <Logo />
-        <div className="logo-search-bar-spacer" />
-        <SearchBarContainer />
+        <img src="/logo.png" className="logo" />
+        <form className="search-form" action="/search">
+            <input 
+                type="text" 
+                name="q" 
+                className="search-bar" 
+                placeholder={ searchTerm } />
+            <button className="search-submit">Submit</button>
+        </form>
     </div>
 )

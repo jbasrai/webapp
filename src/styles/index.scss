@@ -1,0 +1,19 @@
+@import './header.scss';
+@import './side-bar.scss';
+@import './results.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, html, #root, .page, .side-bar {
+    height: 100%;
+}
+
+
+* {
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 16px;
+    line-height: 1.25;
+}

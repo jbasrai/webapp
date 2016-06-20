@@ -1,15 +1,21 @@
-@import './common.scss';
-@import './filters';
-
 .side-bar {
     background-color: $secondary-color;
     float: left;
     width: $sideBar-width;
     border-right: 1px solid $primary-color;
     padding: $sideBar-padding-top 0px 0px $sideBar-padding-left;
-    height: 1000px;
 
-    .list:not(:last-child) {
+    .filter:not(:last-child) {
         margin-bottom: 15px;
+    }
+
+    .filter-name {
+        margin: 0px;
+    }
+
+    .filter-list {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
     }
 }
