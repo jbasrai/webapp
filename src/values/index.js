@@ -7,18 +7,14 @@ export const articleTypes = [
         name: 'Review Articles',
         value: 'reviewArticles'
     },
-    {
-        name: 'Clinical Guidelines',
-        value: 'clinicalGuidelines'
-    },
-    {
-        name: 'Blogs',
-        value: 'blogs'
-    },
-    {
-        name: 'Pubmed',
-        value: 'pubmed'
-    },
+    // {
+    //     name: 'Clinical Guidelines',
+    //     value: 'clinicalGuidelines'
+    // },
+    // {
+    //     name: 'Blogs',
+    //     value: 'blogs'
+    // }
 ]
 
 export const specialties = [

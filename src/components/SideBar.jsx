@@ -2,13 +2,15 @@ import React from 'react'
 import { getURLParameter } from '../utils'
 import { articleTypes, specialties } from '../values'
 
-const Option = ({ name, value, isSelected }) => (
-    <li className={ isSelected ? 'selected' : '' }>
+const Option = ({ name, value, isSelected, onClick }) => (
+    <li 
+        onClick={ onClick }
+        className={ isSelected ? 'selected' : '' }>
         { name }
     </li>
 )
 
-const Filter = ({ title, options, selected }) => (
+const Filter = ({ title, options, selected, onOptionSelect }) => (
     <div className="filter">
         <h3 className="filter-name">{ title }</h3>
         <ul className="filter-list">{ options.map(({ name, value }) =>
@@ -16,7 +18,8 @@ const Filter = ({ title, options, selected }) => (
                 key={ value }
                 name={ name }
                 value={ value } 
-                isSelected={ selected === value } /> )}
+                isSelected={ selected === value } 
+                onClick={ onOptionSelect.bind(null, value) } /> )}
         </ul>
     </div>
 )
@@ -30,11 +33,18 @@ export default () => {
         getURLParameter('specialty') ||
         'internalMedicine'
 
+    const onArticleTypeSelect = (articleType) => {
+        const q = getURLParameter('q')
+
+        window.location.href = `/search?q=${q}&articleType=${articleType}`
+    }
+
     const ArticleTypes = (
         <Filter
             title="Article Types"
             options={ articleTypes }
-            selected={ selectedArticleType } />
+            selected={ selectedArticleType } 
+            onOptionSelect={ onArticleTypeSelect } />
     )
 
     const Specialties = (
@@ -47,7 +57,6 @@ export default () => {
     return (
         <div className="side-bar">
             { ArticleTypes }
-            { Specialties }
         </div>
     )
 }
