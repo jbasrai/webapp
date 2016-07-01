@@ -6,21 +6,18 @@ import axios from 'axios'
 
 const router = express.Router();
 
-router.get('/search', function(req, res) {
-    // todo: implement server-side rendering
-    var query = req.query;
+router.get('/query', (req, res) => {
+    const query = req.query.q;
+    const articleType = req.query.articleType;
+
     queryService
-        .search(query)
-        .then(({ data }) => JSON.stringify(data))
-        .then(results => res.render('search', { results }));
+        .search(query, articleType)
+        .then(response => response.json())
+        .then(data => res.json(data))
 });
 
-router.get('/query', function(req, res) {
-    var query = req.query;
-    queryService
-        .search(query)
-        .then(({ data }) => res.json(data));
-});
+router.get(/^\/(search)?$/, (req, res) => {
+    res.render('index')
+})
 
-export default router;
-
+export default router

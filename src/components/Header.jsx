@@ -1,14 +1,15 @@
 import React from 'react'
-export default ({ searchTerm }) => (
+export default ({ search, query, onSearchChange, onSearchGo }) => (
     <div className="header">
         <img src="/logo.png" className="logo" />
-        <form className="search-form" action="/search">
+        <form className="search-form" action="/search" onSubmit={onSearchGo} >
             <input 
                 type="text" 
-                name="q" 
                 className="search-bar" 
-                placeholder={ searchTerm } />
-            <button className="search-submit">Submit</button>
+                value={search}
+                onChange={e => onSearchChange(e.target.value)}
+                placeholder={query || 'Search...'} />
+            <input type="submit" className="search-submit" value="Submit" />
         </form>
     </div>
 )

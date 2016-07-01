@@ -1,4 +1,5 @@
 import React from 'react'
+import { INITIAL, LOADING, NOT_FOUND, READY } from '../values/results'
 
 const Hit = ({ content, title, url }) => (
     <div className="hit">
@@ -21,7 +22,11 @@ const Site = ({ site, results }) => (
     </div>
 )
 
-export default ({ results }) => {
+const Message = ({ children }) => (
+    <div className="message">{ children }</div>
+)
+
+const Results = ({ results }) => {
     return (
         <div className="results">
             { results.map(({ site, results }) =>
@@ -32,4 +37,17 @@ export default ({ results }) => {
             )}
         </div>
     )
+}
+
+export default ({ results }) => {
+    switch (results.status) {
+        case INITIAL:
+            return <Message>Try a query in the box above</Message>
+        case NOT_FOUND:
+            return <Message>Results not found</Message>
+        case LOADING:
+            return <Message>Loading...</Message>
+        case READY:
+            return <Results results={ results.body } />
+    }
 }

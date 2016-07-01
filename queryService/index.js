@@ -1,13 +1,9 @@
-import axios from 'axios';
+import fetch from 'isomorphic-fetch';
 
 const queryService = process.env.QUERY_SERVICE;
 
-const search = (query) => {
-    return axios({
-        method: 'get',
-        url: queryService + '/query',
-        params: query
-    });
-};
+const search = (query, articleType) => (
+    fetch(`${queryService}/query?q=${query}&articleType=${articleType}`)
+)
 
 export default { search };

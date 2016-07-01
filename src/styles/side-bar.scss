@@ -2,7 +2,9 @@
     background-color: $secondary-color;
     float: left;
     width: $sideBar-width;
+    height: calc(100vh - 115px);
     border-right: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
     padding: $sideBar-padding-top 0px 0px $sideBar-padding-left;
 
     .filter:not(:last-child) {
@@ -17,9 +19,17 @@
         list-style: none;
         padding: 0px;
         margin: 0px;
+    }
 
-        .selected {
-            color: blue;
+    .option {
+        cursor: pointer;
+
+        &.selected {
+            color: #527ACC;
+        }
+
+        &:hover {
+            color: #8FA3CC;
         }
     }
 }

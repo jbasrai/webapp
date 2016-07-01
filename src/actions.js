@@ -1,26 +1,67 @@
 import fetch from 'isomorphic-fetch'
+import { findTarget } from './utils'
 
+export const UPDATE_SEARCH = 'UPDATE_SEARCH'
+export const UPDATE_QUERY = 'UPDATE_QUERY'
+export const SELECT_FILTER_OPTION = 'SELECT_FILTER_OPTION'
 export const REQUEST_RESULTS = 'REQUEST_RESULTS'
 export const RECEIVE_RESULTS = 'RECEIVE_RESULTS'
 
-function requestResults() {
-    return {
-        type: REQUEST_RESULTS
-    }
+export const updateSearch = search => ({
+    type: UPDATE_SEARCH,
+    search
+})
+
+export const updateQuery = query => ({
+    type: UPDATE_QUERY,
+    query
+})
+
+export const selectFilterOption = (filter, option) => ({
+    type: SELECT_FILTER_OPTION,
+    filter,
+    option
+})
+
+export const requestResults = () => ({
+    type: REQUEST_RESULTS 
+})
+
+export const receiveResults = results => ({
+    type: RECEIVE_RESULTS,
+    results
+})
+
+export const fetchResults = (router, query) => (dispatch, getStore) => {
+    const { filters } = getStore()
+    const articleType = findTarget('articleType', filters).selected
+
+    router.push({
+        query: {
+            q: query,
+            articleType
+        }
+    })
+
+    dispatch(requestResults())
+    
+    return fetch(`/query?q=${query}&articleType=${articleType}`)
+        .then(response => response.json())
+        .then(results => dispatch(receiveResults(results)))
 }
 
-function receiveResults(results) {
-    return {
-        type: RECEIVE_RESULTS,
-        results
-    }
+export const querySearch = router => (dispatch, getStore) => {
+    const { search } = getStore()
+
+    dispatch(updateSearch(''))
+    dispatch(updateQuery(search))
+    dispatch(fetchResults(router, search))
 }
 
-export function fetchResults(query) {
-    return dispatch => {
-        dispatch(requestResults())
-        return fetch(`/query?q=${query}`)
-            .then(response => response.json())
-            .then(results => dispatch(receiveResults(results)))
-    }
+export const filterSearch = (router, filter, option) => (dispatch, getStore) => {
+    dispatch(selectFilterOption(filter, option))
+
+    const { query } = getStore()
+
+    dispatch(fetchResults(router, query))
 }
