@@ -8,7 +8,7 @@ export default ({ search, query, onSearchChange, onSearchGo }) => (
                 className="search-bar" 
                 value={search}
                 onChange={e => onSearchChange(e.target.value)}
-                placeholder={query || 'Search...'} />
+                placeholder={'Search...'} />
             <input type="submit" className="search-submit" value="Submit" />
         </form>
     </div>

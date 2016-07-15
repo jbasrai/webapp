@@ -53,7 +53,6 @@ export const fetchResults = (router, query) => (dispatch, getStore) => {
 export const querySearch = router => (dispatch, getStore) => {
     const { search } = getStore()
 
-    dispatch(updateSearch(''))
     dispatch(updateQuery(search))
     dispatch(fetchResults(router, search))
 }

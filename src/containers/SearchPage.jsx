@@ -73,7 +73,6 @@ class SearchPage extends Component {
             <div className="page">
                 <Header 
                     search={search}
-                    query={query}
                     onSearchChange={updateSearch} 
                     onSearchGo={enhancedQuerySearch} />
                 <SideBar 

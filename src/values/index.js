@@ -12,6 +12,9 @@ export const filters = [{
     }, {
         name: 'Review Articles',
         value: 'reviewArticles'
+    }, {
+        name: 'Case Reports',
+        value: 'caseReports'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
 }]
