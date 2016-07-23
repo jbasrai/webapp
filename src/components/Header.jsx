@@ -1,4 +1,5 @@
 import React from 'react'
+
 export default ({ search, query, onSearchChange, onSearchGo }) => (
     <div className="header">
         <img src="/logo.png" className="logo" />

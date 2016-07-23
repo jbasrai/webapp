@@ -13,8 +13,29 @@ export const filters = [{
         name: 'Review Articles',
         value: 'reviewArticles'
     }, {
+        name: 'Blogs',
+        value: 'blogs'
+    }, {
         name: 'Case Reports',
         value: 'caseReports'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
+}]
+
+export const footerLinks = [{
+    name: 'About',
+    value: 'about',
+    url: '/about.html'
+}, {
+    name: 'Terms of Service',
+    value: 'tos',
+    url: '/tos.html'
+}, {
+    name: 'Blog',
+    value: 'blog',
+    url: 'http://www.blog.numose.com/'
+}, {
+    name: 'Contact',
+    value: 'contact',
+    url: '/contact.html'
 }]

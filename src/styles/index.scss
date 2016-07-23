@@ -2,6 +2,7 @@
 @import './header.scss';
 @import './side-bar.scss';
 @import './results.scss';
+@import './footer.scss';
 
 body {
     margin: 0;
@@ -12,4 +13,10 @@ body {
     font-family: 'Helvetica', 'sans-serif';
     font-size: 16px;
     line-height: 1.25;
+}
+
+.content {
+    overflow: auto;
+    display: flex;
+    min-height: calc(100vh - 170px);
 }

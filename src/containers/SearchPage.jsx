@@ -8,11 +8,13 @@ import {
     querySearch,
     filterSearch
 } from '../actions'
+import { footerLinks } from '../values'
 import { getURLParameter, findTarget } from '../utils'
 import { Q, ARTICLE_TYPE } from '../queryParams'
 import Header from '../components/Header'
 import SideBar from '../components/SideBar'
 import Results from '../components/Results'
+import Footer from '../components/Footer'
 
 const mapStateToProps = ({
     search,
@@ -40,10 +42,17 @@ class SearchPage extends Component {
     }
 
     componentDidMount() {
-        const { query, filters, router, fetchResults } = this.props
+        const { 
+            query, 
+            filters, 
+            router, 
+            fetchResults,
+            updateSearch 
+        } = this.props
 
         if (query) {
             fetchResults(router, query)
+            updateSearch(query)
         }
     }
 
@@ -75,10 +84,13 @@ class SearchPage extends Component {
                     search={search}
                     onSearchChange={updateSearch} 
                     onSearchGo={enhancedQuerySearch} />
-                <SideBar 
-                    filters={filters}
-                    onFilterOptionSelect={enhancedFilterSearch} />
-                <Results results={results} />
+                <div className="content">
+                    <SideBar 
+                        filters={filters}
+                        onFilterOptionSelect={enhancedFilterSearch} />
+                    <Results results={results} />
+                </div>
+                <Footer links={footerLinks} />
             </div>
         )
     }
