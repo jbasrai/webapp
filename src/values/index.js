@@ -27,13 +27,17 @@ export const footerLinks = [{
     value: 'about',
     url: '/about.html'
 }, {
+    name: 'Our Blog',
+    value: 'blog',
+    url: 'http://www.blog.numose.com/'
+}, {
     name: 'Terms of Service',
     value: 'tos',
     url: '/tos.html'
 }, {
-    name: 'Blog',
-    value: 'blog',
-    url: 'http://www.blog.numose.com/'
+    name: 'Privacy Policy',
+    value: 'privacy',
+    url: '/privacy.html'
 }, {
     name: 'Contact',
     value: 'contact',

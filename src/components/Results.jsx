@@ -5,7 +5,13 @@ const Hit = ({ content, title, url }) => (
     <div className="hit">
         <a className="hit-title" href={ url }>{ title }</a>
         <div className="hit-url">{ url }</div>
-        <div>{ content.slice(0, 100) }</div>
+        <div className="hit-contents">
+            { content.map(c => 
+                <div key={ c.slice(0, 5) }>
+                    { c.slice(0, 100) }
+                </div>
+            )}
+        </div>
     </div>
 )
 
