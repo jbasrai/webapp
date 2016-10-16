@@ -5,13 +5,9 @@ const Hit = ({ content, title, url }) => (
     <div className="hit">
         <a className="hit-title" href={ url }>{ title }</a>
         <div className="hit-url">{ url }</div>
-        <div className="hit-contents">
-            { content.map(c => 
-                <div key={ c.slice(0, 5) }>
-                    { c.slice(0, 100) }
-                </div>
-            )}
-        </div>
+        <div 
+            className="hit-contents" 
+            dangerouslySetInnerHTML={ {__html: content} } />
     </div>
 )
 
@@ -35,12 +31,14 @@ const Message = ({ children }) => (
 const Results = ({ results }) => {
     return (
         <div className="results">
-            { results.map(({ site, results }) =>
-                <Site 
-                    key={ site }
-                    site={ site }
-                    results={ results } />
-            )}
+            { results
+                .filter(({ site, results }) => results.length > 0)
+                .map(({ site, results }) =>
+                    <Site 
+                        key={ site }
+                        site={ site }
+                        results={ results } />
+                )}
         </div>
     )
 }
