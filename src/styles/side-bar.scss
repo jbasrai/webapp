@@ -1,6 +1,6 @@
 .side-bar {
     background-color: $secondary-color;
-    border-right: 1px solid $primary-color;
+    border-right: 0px solid $primary-color;
     padding: $sideBar-padding-top 0px 0px $sideBar-padding-left;
     flex: 1;
 
@@ -9,13 +9,14 @@
     }
 
     .filter-name {
-        margin: 0px;
+        margin: 4px;
     }
 
     .filter-list {
         list-style: none;
         padding: 0px;
-        margin: 0px;
+        margin: 4px;
+        line-height: 100%;
     }
 
     .option {

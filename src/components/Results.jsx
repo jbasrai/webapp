@@ -46,7 +46,7 @@ const Results = ({ results }) => {
 export default ({ results }) => {
     switch (results.status) {
         case INITIAL:
-            return <Message>Try a query in the box above</Message>
+            return <Message>Type a search in the box above</Message>
         case NOT_FOUND:
             return <Message>Results not found</Message>
         case LOADING:
