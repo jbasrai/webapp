@@ -35,17 +35,19 @@ export const receiveResults = results => ({
 export const fetchResults = (router, query) => (dispatch, getStore) => {
     const { filters } = getStore()
     const articleType = findTarget('articleType', filters).selected
+    const specialty = findTarget('specialty', filters).selected
 
     router.push({
         query: {
             q: query,
-            articleType
+            articleType,
+            specialty
         }
     })
 
     dispatch(requestResults())
     
-    return fetch(`/query?q=${query}&articleType=${articleType}`)
+    return fetch(`/query?q=${query}&articleType=${articleType}&specialty=${specialty}`)
         .then(response => response.json())
         .then(results => dispatch(receiveResults(results)))
 }

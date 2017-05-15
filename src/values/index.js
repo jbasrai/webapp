@@ -1,5 +1,5 @@
 import { getURLParameter } from '../utils'
-import { Q, ARTICLE_TYPE } from '../queryParams'
+import { Q, ARTICLE_TYPE, SPECIALTY } from '../queryParams'
 
 export const query = getURLParameter(Q) || ''
 
@@ -20,6 +20,17 @@ export const filters = [{
         value: 'caseReports'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
+}, {
+    name: 'Specialties',
+    value: SPECIALTY,
+    options: [{
+        name: 'General',
+        value: 'general'
+    }, {
+        name: 'Pediatrics',
+        value: 'pediatrics'
+    }],
+    selected: getURLParameter(SPECIALTY) || 'general'
 }]
 
 export const footerLinks = [{

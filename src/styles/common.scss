@@ -2,6 +2,7 @@ $background-color: #FFFFFF;
 $primary-color: #4A86E8;
 $secondary-color: #ECF2F8;
 
-$sideBar-width: 200px;
+$sideBar-width: 160px;
 $sideBar-padding-top: 20px;
 $sideBar-padding-left: 10px;
+$sideBar-actualWidth: $sideBar-width + $sideBar-padding-left * 2

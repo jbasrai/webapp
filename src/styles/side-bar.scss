@@ -1,8 +1,8 @@
 .side-bar {
     background-color: $secondary-color;
     border-right: 0px solid $primary-color;
-    padding: $sideBar-padding-top 0px 0px $sideBar-padding-left;
-    flex: 1;
+    padding: $sideBar-padding-top $sideBar-padding-left;
+    flex: 0 0 $sideBar-width;
 
     .filter:not(:last-child) {
         margin-bottom: 15px;

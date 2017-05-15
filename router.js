@@ -9,11 +9,10 @@ const analytics = process.env.ANALYTICS + '/query'
 console.log(analytics)
 
 router.get('/query', (req, res) => {
-    const query = req.query.q;
-    const articleType = req.query.articleType;
+    const { q, articleType, specialty } = req.query
 
     queryService
-        .search(query, articleType)
+        .search(q, articleType, specialty)
         .then(response => response.json())
         .then(data => res.json(data))
 
@@ -24,7 +23,7 @@ router.get('/query', (req, res) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            term: query,
+            term: q,
             articleType: articleType,
             ip: req.ip
         })
