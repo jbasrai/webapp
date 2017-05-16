@@ -19,7 +19,7 @@ app.use(router);
 
 const port = app.get('port');
 const devPort = app.get('devPort');
-var config = require('./webpack.config');
+const config = require('./webpack.config')
 
 // dev server
 if (process.env.NODE_ENV === 'development') {
