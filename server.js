@@ -41,6 +41,17 @@ if (process.env.NODE_ENV === 'development') {
         console.log('dev server started on port ' + devPort);
     });
 } else {
+    const definePlugin = new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+        }
+    })
+    
+    const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin()
+
+    config.plugins.push(definePlugin)
+    config.plugins.push(uglifyJsPlugin)
+
     webpack(config).run(function(){});
 }
 
