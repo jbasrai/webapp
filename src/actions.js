@@ -66,3 +66,10 @@ export const filterSearch = (router, filter, option) => (dispatch, getStore) => 
 
     dispatch(fetchResults(router, query))
 }
+
+export const sampleSearch = router => dispatch => {
+    const query = 'aortic dissection'
+    dispatch(updateSearch(query))
+    dispatch(updateQuery(query))
+    dispatch(fetchResults(router, query))
+}

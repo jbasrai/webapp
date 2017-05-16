@@ -6,7 +6,8 @@ import {
     selectFilterOption,
     fetchResults,
     querySearch,
-    filterSearch
+    filterSearch,
+    sampleSearch
 } from '../actions'
 import { footerLinks } from '../values'
 import { getURLParameter, findTarget } from '../utils'
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch => ({
     selectFilterOption: (filter, option) => dispatch(selectFilterOption(filter, option)),
     fetchResults: (router, query) => dispatch(fetchResults(router, query)),
     querySearch: router => dispatch(querySearch(router)),
-    filterSearch: (router, filter, option) => dispatch(filterSearch(router, filter, option))
+    filterSearch: (router, filter, option) => dispatch(filterSearch(router, filter, option)),
+    sampleSearch: router => dispatch(sampleSearch(router))
 })
 
 class SearchPage extends Component {
@@ -67,6 +69,7 @@ class SearchPage extends Component {
             fetchResults,
             querySearch,
             filterSearch,
+            sampleSearch,
             router,
             location
         } = this.props
@@ -78,6 +81,8 @@ class SearchPage extends Component {
 
         const enhancedFilterSearch = filterSearch.bind(null, router)
 
+        const enhancedSampleSearch = sampleSearch.bind(null, router)
+
         return (
             <div className="page">
                 <Header 
@@ -88,7 +93,9 @@ class SearchPage extends Component {
                     <SideBar 
                         filters={filters}
                         onFilterOptionSelect={enhancedFilterSearch} />
-                    <Results results={results} />
+                    <Results 
+                        results={results} 
+                        onSampleSearch={enhancedSampleSearch} />
                 </div>
                 <Footer links={footerLinks} />
             </div>

@@ -2,9 +2,9 @@ import React from 'react'
 
 export default ({ search, query, onSearchChange, onSearchGo }) => (
     <div className="header">
-        <div className="logo-wrapper">
+        <a href="/" className="logo-wrapper">
             <img src="/logo.png" className="logo" />
-        </div>
+        </a>
         <form className="search-form" action="/search" onSubmit={onSearchGo} >
             <input 
                 type="text" 

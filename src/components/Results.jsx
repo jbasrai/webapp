@@ -28,25 +28,29 @@ const Message = ({ children }) => (
     <div className="message">{ children }</div>
 )
 
-const Results = ({ results }) => {
-    return (
-        <div className="results">
-            { results
-                .filter(({ site, results }) => results.length > 0)
-                .map(({ site, results }) =>
-                    <Site 
-                        key={ site }
-                        site={ site }
-                        results={ results } />
-                )}
-        </div>
-    )
-}
+const Results = ({ results }) => (
+    <div className="results">
+        { results
+            .filter(({ site, results }) => results.length > 0)
+            .map(({ site, results }) =>
+                <Site 
+                    key={ site }
+                    site={ site }
+                    results={ results } />
+            )}
+    </div>
+)
 
-export default ({ results }) => {
+export default ({ results, onSampleSearch }) => {
     switch (results.status) {
         case INITIAL:
-            return <Message>Type a search in the box above</Message>
+            return (
+                <Message>
+                    <span>Type a </span>
+                    <a href="javascript:void(0);" onClick={onSampleSearch}>search</a>
+                    <span> in the box above</span>
+                </Message>
+            )
         case NOT_FOUND:
             return <Message>Results not found</Message>
         case LOADING:
