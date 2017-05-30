@@ -18,13 +18,16 @@ export const filters = [{
     }, {
         name: 'Case Reports',
         value: 'caseReports'
+    }, {
+        name: 'Guidelines',
+        value: 'guidelines'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
 }, {
     name: 'Specialties',
     value: SPECIALTY,
     options: [{
-        name: 'General',
+        name: 'Adult',
         value: 'general'
     }, {
         name: 'Pediatrics',

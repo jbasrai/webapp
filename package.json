@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "local": "ANALYTICS=http://docker:8212 QUERY_SERVICE=http://docker:3000 NODE_ENV=development nodemon server.js"
+    "local": "QUERY_SERVICE=http://192.168.99.101:3000 NODE_ENV=development nodemon server.js"
   },
   "repository": {
     "type": "git",
