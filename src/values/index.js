@@ -21,6 +21,9 @@ export const filters = [{
     }, {
         name: 'Guidelines',
         value: 'guidelines'
+    }, {
+        name: 'Pharmacopoeia',
+        value: 'pharm'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
 }, {
