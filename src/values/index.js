@@ -24,6 +24,9 @@ export const filters = [{
     }, {
         name: 'Pharmacopoeia',
         value: 'pharm'
+    }, {
+        name: 'Calculator',
+        value: 'calc'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
 }, {
