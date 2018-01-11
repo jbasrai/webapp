@@ -7,6 +7,9 @@ export const filters = [{
     name: 'Article Type',
     value: ARTICLE_TYPE,
     options: [{
+        name: 'All',
+        value: 'all'
+    }, {
         name: 'Clinical Resources',
         value: 'clinicalResources'
     }, {
@@ -28,7 +31,7 @@ export const filters = [{
         name: 'Calculator',
         value: 'calc'
     }],
-    selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
+    selected: getURLParameter(ARTICLE_TYPE) || 'all'
 }, {
     name: 'Specialties',
     value: SPECIALTY,
