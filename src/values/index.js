@@ -7,6 +7,9 @@ export const filters = [{
     name: 'Article Type',
     value: ARTICLE_TYPE,
     options: [{
+        name: 'All',
+        value: 'all'
+    }, {
         name: 'Clinical Resources',
         value: 'clinicalResources'
     }, {

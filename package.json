@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "local": "QUERY_SERVICE=http://192.168.99.101:3000 NODE_ENV=development nodemon server.js"
+    "local": "QUERY_SERVICE=http://192.168.99.100:3000 NODE_ENV=development nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.6.5",
     "css-loader": "^0.23.1",
-    "express": "^4.13.4",
+    "express": "^4.16.4",
     "http-proxy": "^1.13.2",
     "isomorphic-fetch": "^2.2.1",
     "jade": "^1.11.0",

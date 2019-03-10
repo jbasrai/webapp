@@ -91,10 +91,11 @@ class SearchPage extends Component {
                     onSearchGo={enhancedQuerySearch} />
                 <div className="content">
                     <SideBar 
-                        filters={filters}
+                        filters={filters}                        
                         onFilterOptionSelect={enhancedFilterSearch} />
                     <Results 
-                        results={results} 
+                        results={results}
+                        filters={filters}
                         onSampleSearch={enhancedSampleSearch} />
                 </div>
                 <Footer links={footerLinks} />
