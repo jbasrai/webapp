@@ -20,7 +20,7 @@ export default () => (
         <Router history={browserHistory}>
             <Route path="/" component={Wrap}>
                 <IndexRedirect to="/search" />
-                <Route path="/search" component={SearchPage} />
+                <Route path="/search" component={SearchPage} />\
             </Route>
         </Router>
     </Provider>

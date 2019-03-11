@@ -2,6 +2,7 @@ import React from 'react'
 import { INITIAL, LOADING, NOT_FOUND, READY } from '../values/results'
 import { articleTypes, specialties } from '../values'
 import { ARTICLE_TYPE } from '../queryParams'
+import Images from './Images.jsx'
 
 const Hit = ({ content, title, url, score }) => (
     <div className="hit">
@@ -33,8 +34,12 @@ const Message = ({ children }) => (
 )
 
 const Results = ({ results, filters }) => {
-console.log('made it');
-    if(filters[0].selected == 'all') {
+    const articleType = filters.find(f => f.value === 'articleType')
+    const selected = articleType.selected
+    const images = []
+
+
+    if(selected === 'all') {
         return(
             <div className="results">
                 { results
@@ -48,23 +53,26 @@ console.log('made it');
                             )}
             </div>
         )
-    } else {
-        return (
-            <div className="results">
-                { results
-                    .filter(({ site, results }) => results.length > 0)
-                    .map(({ site, results }) =>
-                        <Site 
-                            key={ site }
-                            site={ site }
-                            results={ results } />
-                    )}
-        </div>
-        )
+    } else if(selected === 'image') {
+           return <Images />
+
     }
+    return (
+        <div className="results">
+            { results
+                .filter(({ site, results }) => results.length > 0)
+                .map(({ site, results }) =>
+                    <Site 
+                        key={ site }
+                        site={ site }
+                        results={ results } />
+                )}
+    </div>
+    )
 }
 
-export default ({ results, onSampleSearch }) => {
+export default ({ results, onSampleSearch, filters }) => {
+
     switch (results.status) {
         case INITIAL:
             return (
@@ -79,6 +87,6 @@ export default ({ results, onSampleSearch }) => {
         case LOADING:
             return <Message>Loading...</Message>
         case READY:
-            return <Results results={ results.body } />
+            return <Results results={ results.body } filters={filters} />
     }
 }

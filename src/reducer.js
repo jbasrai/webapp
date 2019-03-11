@@ -62,9 +62,19 @@ const results = (state={ status: INITIAL }, action) => {
     }
 }
 
+const isOnLandingPage = (state=false, action) => {
+    if (state === false) return false
+    switch(action.type) {
+        case UPDATE_SEARCH:
+            return false
+    }
+    return true
+}
+
 export default combineReducers({
     search,
     query,
     filters,
-    results
+    results,
+    isOnLandingPage,
 })

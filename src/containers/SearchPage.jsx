@@ -16,17 +16,20 @@ import Header from '../components/Header'
 import SideBar from '../components/SideBar'
 import Results from '../components/Results'
 import Footer from '../components/Footer'
+import Landing from '../components/Landing'
 
 const mapStateToProps = ({
     search,
     query,
     filters,
-    results
+    results,
+    isOnLandingPage,
 }) => ({ 
     search,
     query,
     filters,
-    results
+    results,
+    isOnLandingPage,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -71,8 +74,11 @@ class SearchPage extends Component {
             filterSearch,
             sampleSearch,
             router,
-            location
+            location,
+            isOnLandingPage
         } = this.props
+
+        console.log('isOnLandingPage', isOnLandingPage)
 
         const enhancedQuerySearch = (e) => {
             e.preventDefault()
@@ -82,6 +88,15 @@ class SearchPage extends Component {
         const enhancedFilterSearch = filterSearch.bind(null, router)
 
         const enhancedSampleSearch = sampleSearch.bind(null, router)
+
+        console.log('search', search)
+
+        if (isOnLandingPage) {
+          return (<Landing 
+                    search={search}
+                    onSearchChange={updateSearch} 
+                    onSearchGo={enhancedQuerySearch} />)
+        }
 
         return (
             <div className="page">

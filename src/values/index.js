@@ -30,6 +30,9 @@ export const filters = [{
     }, {
         name: 'Calculator',
         value: 'calc'
+    // },{
+    //     name: 'Images',
+    //     value: 'image'
     }],
     selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
 }, {

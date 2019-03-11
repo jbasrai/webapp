@@ -27,7 +27,6 @@ const Filter = ({ title, options, selected, onOptionSelect }) => (
 )
 
 export default ({ filters, onFilterOptionSelect }) => {
-console.log(filters)
     return (
         <div className="side-bar">
             { filters.map(f => (

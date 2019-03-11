@@ -8,6 +8,8 @@ const devServer = require('webpack-dev-server');
 const path = require('path');
 const proxy = require('http-proxy').createProxyServer();
 
+console.log('hello')
+
 // setup
 app.set('port', process.env.PORT || 9000);
 app.set('devPort', process.env.DEV_PORT || 9001);
