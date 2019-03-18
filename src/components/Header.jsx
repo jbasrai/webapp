@@ -6,7 +6,7 @@ export default ({ search, query, onSearchChange, onSearchGo }) => (
             <img src="/logo.png" className="logo" />
         </a>
         <form className="search-form" action="/search" onSubmit={onSearchGo} >
-            <input 
+            <input
                 type="text" 
                 className="search-bar" 
                 value={search}

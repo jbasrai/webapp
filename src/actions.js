@@ -7,6 +7,17 @@ export const SELECT_FILTER_OPTION = 'SELECT_FILTER_OPTION'
 export const REQUEST_RESULTS = 'REQUEST_RESULTS'
 export const RECEIVE_RESULTS = 'RECEIVE_RESULTS'
 
+export const selectImage = (index) => {
+    console.log('index', index)
+    return { type: 'SELECT_IMAGE', index }
+}
+
+export const nextImage = () => ({ type: 'NEXT_IMAGE' })
+
+export const prevImage = () => ({ type: 'PREV_IMAGE'})
+
+export const closeGallery = () => ({ type: 'CLOSE_GALLERY' })
+
 export const updateSearch = search => ({
     type: UPDATE_SEARCH,
     search

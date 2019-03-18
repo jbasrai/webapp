@@ -62,13 +62,27 @@ const results = (state={ status: INITIAL }, action) => {
     }
 }
 
-const isOnLandingPage = (state=false, action) => {
+const isOnLandingPage = (state=true, action) => {
     if (state === false) return false
     switch(action.type) {
-        case UPDATE_SEARCH:
+        case UPDATE_QUERY:
             return false
     }
     return true
+}
+
+const selectedImage = (state=-1, action) => {
+        console.log(action.type, action.index)
+    if (action.type === 'SELECT_IMAGE') {
+        return action.index
+    } else if (action.type === 'NEXT_IMAGE') {
+        return state + 1
+    } else if (action.type === 'PREV_IMAGE') {
+        return state -1
+    } else if (action.type = 'CLOSE_GALLERY') {
+        return -1
+    }
+    return state
 }
 
 export default combineReducers({
@@ -77,4 +91,5 @@ export default combineReducers({
     filters,
     results,
     isOnLandingPage,
+    selectedImage,
 })

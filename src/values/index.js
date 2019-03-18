@@ -30,11 +30,11 @@ export const filters = [{
     }, {
         name: 'Calculator',
         value: 'calc'
-    // },{
-    //     name: 'Images',
-    //     value: 'image'
+    //},{
+    //    name: 'Images',
+    //    value: 'images'
     }],
-    selected: getURLParameter(ARTICLE_TYPE) || 'clinicalResources'
+    selected: getURLParameter(ARTICLE_TYPE) || 'all'
 }, {
     name: 'Specialties',
     value: SPECIALTY,

@@ -7,7 +7,11 @@ import {
     fetchResults,
     querySearch,
     filterSearch,
-    sampleSearch
+    sampleSearch,
+    selectImage,
+    closeGallery,
+    nextImage,
+    prevImage,
 } from '../actions'
 import { footerLinks } from '../values'
 import { getURLParameter, findTarget } from '../utils'
@@ -24,12 +28,14 @@ const mapStateToProps = ({
     filters,
     results,
     isOnLandingPage,
+    selectedImage,
 }) => ({ 
     search,
     query,
     filters,
     results,
     isOnLandingPage,
+    selectedImage,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -38,12 +44,20 @@ const mapDispatchToProps = dispatch => ({
     fetchResults: (router, query) => dispatch(fetchResults(router, query)),
     querySearch: router => dispatch(querySearch(router)),
     filterSearch: (router, filter, option) => dispatch(filterSearch(router, filter, option)),
-    sampleSearch: router => dispatch(sampleSearch(router))
+    sampleSearch: router => dispatch(sampleSearch(router)),
+    selectImage: (index) => {
+        console.log('dispatch', index)
+        return dispatch(selectImage(index))
+    },
+    closeGallery: () => dispatch(closeGallery()),
+    nextImage: () => dispatch(nextImage()),
+    prevImage: () => dispatch(prevImage()),
 })
 
 class SearchPage extends Component {
     constructor(props) {
         super(props)
+
     }
 
     componentDidMount() {
@@ -59,6 +73,7 @@ class SearchPage extends Component {
             fetchResults(router, query)
             updateSearch(query)
         }
+
     }
 
     render() {
@@ -75,10 +90,16 @@ class SearchPage extends Component {
             sampleSearch,
             router,
             location,
-            isOnLandingPage
+            isOnLandingPage,
+            openGallery,
+            selectedImage,
+            selectImage,
+            closeGallery,
+            nextImage,
+            prevImage,
         } = this.props
 
-        console.log('isOnLandingPage', isOnLandingPage)
+        console.log('search pagse', selectedImage)
 
         const enhancedQuerySearch = (e) => {
             e.preventDefault()
@@ -89,15 +110,14 @@ class SearchPage extends Component {
 
         const enhancedSampleSearch = sampleSearch.bind(null, router)
 
-        console.log('search', search)
-
         if (isOnLandingPage) {
-          return (<Landing 
+          return (
+          <Landing 
                     search={search}
                     onSearchChange={updateSearch} 
-                    onSearchGo={enhancedQuerySearch} />)
+                    onSearchGo={enhancedQuerySearch} />
+            )
         }
-
         return (
             <div className="page">
                 <Header 
@@ -111,7 +131,13 @@ class SearchPage extends Component {
                     <Results 
                         results={results}
                         filters={filters}
-                        onSampleSearch={enhancedSampleSearch} />
+                        onSampleSearch={enhancedSampleSearch}
+                        selectImage={selectImage}
+                        closeGallery={closeGallery}
+                        selectedImage={selectedImage}
+                        nextImage={nextImage}
+                        prevImage={prevImage}
+                    />
                 </div>
                 <Footer links={footerLinks} />
             </div>

@@ -1,3 +1,42 @@
 .landing {
-	background-color: red;
+background-color: $background-color;
+
+    .logo-wrapper {
+ 	 display: block;
+	  margin-left: 38%;
+	  margin-right: 38%;
+  	  margin-top: 18%;
+  	  margin-bottom: 5px
+
+    }
+
+    .logo {
+        height: 150px;
+    }
+
+    .search-form {
+        vertical-align: top;
+        margin-left: 5px;
+    }
+
+    .search-bar {
+        height: 40px;
+        width: 500px;
+        padding: px 0 0 20px;
+        border: 1px solid $primary-color;
+        margin-top: 5px;
+        margin-left: 30%
+    }
+
+    .search-submit {
+        vertical-align: top;
+        height: 44px;
+        padding: 0px 15px;
+        background-color: $secondary-color;
+        border: 1px solid $primary-color;
+        border-left: 0;
+        font-weight: bold;
+        color: #111;
+        margin-top: 5px
+    }
 }
